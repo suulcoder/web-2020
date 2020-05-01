@@ -18,9 +18,12 @@ export const failFetchingPetOwners = error => ({
   },
 });
 
-export const startAddingPetOwner = petOwner => ({
+export const startAddingPetOwner = (id,petOwner) => ({
   type: types.PET_OWNER_ADD_STARTED,
-  payload: petOwner,
+  payload: {
+    id,
+    petOwner,
+  },
 });
 export const completeAddingPetOwner = (oldId, petOwner) => ({
   type: types.PET_OWNER_ADD_COMPLETED,
